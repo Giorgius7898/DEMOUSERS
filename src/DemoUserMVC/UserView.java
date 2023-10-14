@@ -1,30 +1,36 @@
 package DemoUserMVC;
+import javax.swing.*;
 import java.util.Scanner;
 public class UserView {
     public void printUserDetails(User user){
         System.out.println("\nDetalles del usuario:");
-        System.out.println("nombre de usuario: "+user.getUsername());
-        System.out.println("Contraseña: "+user.getPassword());
-        System.out.println("Dirección de correo electrónico: "+user.getEmail());
+        String message ="";
+        message += "Username: " + user.getUsername()+"\n";
+        message += "Password: " + user.getPassword()+"\n";
+        message += "Email: " +user.getEmail()+"\n";
+        JOptionPane.showMessageDialog(null, message);
     }
 
     public String getInput(String message){
-        System.out.println((message));
-        Scanner scanner = new Scanner(System.in);
-        return scanner.nextLine();
+        return JOptionPane.showInputDialog(null, message);
     }
 
     public void showMessage(String message){
         System.out.println(message);
     }
 
-    public void displayMenu(){
-        System.out.println("\nMenú:");
-        System.out.println("1. Crear usuario");
-        System.out.println("2. Consultar usuario");
-        System.out.println("3. Modificiar usuario");
-        System.out.println("4. Eliminar usuario");
-        System.out.println("5. Salir");
-        System.out.print("Elige una opción:");
+    public String displayMenu(){
+        String message = "";
+        message += "\nMenú:\n";
+        message +="\n";
+        message +="1. Crear usuario \n";
+        message +="2. Consultar usuario \n";
+        message +="3. Modificiar usuario\n";
+        message +="4. Eliminar usuario\n";
+        message +="5. Salir\n";
+        message +="\n";
+        message +="Elige una opción:\n";
+        message +="\n";
+        return JOptionPane.showInputDialog(null,message);
     }
 }

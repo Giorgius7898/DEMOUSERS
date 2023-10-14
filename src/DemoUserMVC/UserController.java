@@ -13,8 +13,7 @@ public class UserController {
         boolean keepRunning = true;
 
         while (keepRunning){
-            view.displayMenu();
-            String option = view.getInput("");
+            String option = view.displayMenu();
 
             switch (option){
                 case "1":
